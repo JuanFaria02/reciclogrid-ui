@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
             return null
         } catch (error) {
             console.error("Erro ao autenticar:", error)
-            return "Erro de conexão com o servidor"
+            return "Error! Contate o fornecedor"
         }
     }
 
