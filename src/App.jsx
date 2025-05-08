@@ -12,11 +12,14 @@ function App() {
           <BrowserRouter>
             <Routes>
                 <Route path='/login' element={<Login/>}/>
-                <Route path="/" element={
+                <Route path="/coletores" element={
                   <PrivateRoute>
-                    {/* Implementar rotas privadas do sistema*/}
+                    <h1>Coletores</h1>
                   </PrivateRoute>
-              }/>
+                }/>
+                <Route path="*" element={
+                  <PrivateRoute/>
+                }/>
             </Routes>
           </BrowserRouter>
         </AuthProvider>

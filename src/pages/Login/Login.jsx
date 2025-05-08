@@ -40,7 +40,7 @@ const Login = () => {
   
     return (
         <div className="m-auto bg-white p-36 rounded-[20px] shadow-[0px_4px_200px_rgba(0,0,0,0.25)]">
-            <img className="relative bottom-20" src="/src/assets/reciclogrid_logo.svg" alt="Logo Reciclogrid" width="400" height="100" />
+            <img className="relative bottom-20" src="/reciclogrid_logo.svg" alt="Logo Reciclogrid" width="400" height="100"/>
            
             <form className="flex-col space-y-6" onSubmit={handleLogin}>
                 <p className="text-red-500">{error}</p>
@@ -55,10 +55,12 @@ const Login = () => {
                     <Input id="password" name="password" placeholder="*****" type="password" value={password} onChange={(e) => [setPassword(e.target.value), setError("")]}/>
                 </div>
 
-                <button type="submit"
-                        className="mt-4 bg-black text-white py-2 rounded-md shadow-md hover:bg-gray-800 transition">
-                        Login
-                </button>            
+                <div className="flex flex-col items-center">
+                    <button type="submit"
+                            className="rounded-lg border border-transparent px-5 py-2 text-base font-medium bg-[#1a1a1a] cursor-pointer transition-colors duration-200 hover:border-gray-400 text-white">
+                            Login
+                    </button>   
+                </div>         
             </form>
         </div>
     )
