@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // ou use outro pacote de ícones se preferir
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const { signout } = useAuth();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { signout } = useAuth()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="bg-white shadow-2xl">
@@ -83,7 +83,7 @@ const Header = () => {
         </nav>
       )}
     </header>
-  );
-};
+  )
+}
 
 export default Header;
