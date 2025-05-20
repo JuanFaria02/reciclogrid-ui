@@ -29,19 +29,19 @@ const Header = () => {
 
         <nav className="hidden md:block text-[18px] pb-9 text-center">
           <ul className="flex pt-14">
-            <li className="mr-20">
+            <li className="mr-14">
               <Link className="hover:text-green-300" to="/perfil">Perfil</Link>
             </li>
-            <li className="mr-20">
+            <li className="mr-14">
               <Link className="hover:text-green-300" to="/coletores">Coletores</Link>
             </li>
-            <li className="mr-20">
+            <li className="mr-14">
               <Link className="hover:text-green-300" to="/operadores">Operadores</Link>
             </li>
-            <li className="mr-20">
+            <li className="mr-14">
               <Link className="hover:text-green-300" to="/mapa">Mapa</Link>
             </li>
-            <li className="mr-20">
+            <li className="mr-14">
               <button
                 onClick={signout}
                 className="hover:text-green-300 cursor-pointer text-[18px] bg-none border-none p-0"

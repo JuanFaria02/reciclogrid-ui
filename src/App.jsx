@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from "./pages/Login/Login.jsx";
 import { AuthProvider } from "./contexts/auth.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import Collectors from "./pages/Collectors/Collectors.jsx";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
                 <Route path='/login' element={<Login/>}/>
                 <Route path="/coletores" element={
                   <PrivateRoute>
-                    <h1>Coletores</h1>
+                    <Collectors/>
                   </PrivateRoute>
                 }/>
                 <Route path="*" element={
