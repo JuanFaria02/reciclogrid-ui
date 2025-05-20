@@ -6,10 +6,11 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
 
     const [loading, setLoading] = useState(true)
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
     const signin = async (email, password) => {
         try {
-            const response = await fetch("http://localhost:8080/auth/login", {
+            const response = await fetch(`${backendUrl}/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -36,19 +37,28 @@ export const AuthProvider = ({ children }) => {
             return "Error! Contate o fornecedor"
         }
     }
-
-    const refreshToken = async (refreshToken) => {
+    
+    const signout = () => {
+        setUser(null);
+        localStorage.removeItem("access_token")
+        localStorage.removeItem("refresh_token")
+    };
+     
+    const refreshAccessToken = async (oldRefreshToken) => {
         try {
-            const response = await fetch("http://localhost:8080/auth/login", {
+            const response = await fetch(`${backendUrl}/refreshToken`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ refreshToken }),
+                body: JSON.stringify({ refreshToken: oldRefreshToken }),
             })
-    
+            
             if (!response.ok) {
-                return "Usuário não autorizado"
+                debugger
+                console.log("singout")
+                signout()
+                throw new Error("Refresh token inválido")
             }
     
             const data = await response.json()
@@ -66,13 +76,7 @@ export const AuthProvider = ({ children }) => {
             return "Erro de conexão com o servidor"
         }
     }
-    
-    const signout = () => {
-        setUser(null);
-        localStorage.removeItem("access_token")
-        localStorage.removeItem("refresh_token")
-    };
-       
+
     useEffect(() => {
         const accessToken = localStorage.getItem("access_token")
 
@@ -90,7 +94,7 @@ export const AuthProvider = ({ children }) => {
 
     return ( 
         <AuthContext.Provider
-            value={{ user, isAuthenticated: !!user, signin, signout, loading, refreshToken }}>
+            value={{ user, isAuthenticated: !!user, signin, signout, loading, refreshAccessToken }}>
             {children}
         </AuthContext.Provider>
     )
