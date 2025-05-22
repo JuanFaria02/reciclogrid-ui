@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login.jsx";
 import { AuthProvider } from "./contexts/auth.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import Collectors from "./pages/Collectors/Collectors.jsx";
+import Map from "./pages/Map/Map.jsx";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
                 <Route path="/coletores" element={
                   <PrivateRoute>
                     <Collectors/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/mapa" element={
+                  <PrivateRoute>
+                    <Map/>
                   </PrivateRoute>
                 }/>
                 <Route path="*" element={
