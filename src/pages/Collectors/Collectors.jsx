@@ -5,7 +5,7 @@ import { ClipLoader } from "react-spinners";
 
 const Collectors = () => {
   const [page, setPage] = useState(0);
-  const size = 10;
+  const size = 5;
 
   const {
     collectors,
