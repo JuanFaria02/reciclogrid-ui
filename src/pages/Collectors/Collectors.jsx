@@ -108,8 +108,8 @@ const Collectors = () => {
                   <button
                     onClick={prevPage}
                     disabled={page === 0}
-                    className="transform transition-transform duration-200 hover:scale-110 pt-8 pb-8 relative bottom-5 disabled:opacity-50"
-                  >
+                    style={{ outline: 'none', boxShadow: 'none', border: 'none' }}
+                    className="transform transition-transform duration-200 hover:scale-110 relative bottom-5 disabled:opacity-50">
                     <img
                       src="/seta_prox_esq_pag.svg"
                       alt="Voltar página"
@@ -121,8 +121,8 @@ const Collectors = () => {
                   <button
                     onClick={nextPage}
                     disabled={page >= totalPages - 1}
-                    className="transform transition-transform duration-200 hover:scale-110 relative bottom-5 disabled:opacity-50"
-                  >
+                    style={{ outline: 'none', boxShadow: 'none', border: 'none' }}
+                    className="transform transition-transform duration-200 hover:scale-110 relative bottom-5 disabled:opacity-50">
                     <img
                       src="/seta_prox_dir_pag.svg"
                       alt="Avançar página"
