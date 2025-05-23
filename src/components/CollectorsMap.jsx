@@ -100,7 +100,15 @@ const CollectorsMap = () => {
             icon={CustomMarkerIcon(collector)}
           >
             <Popup>
-              <strong>{collector.nome}</strong><br />
+              <strong>{collector.name}</strong><br />
+              <a
+                href={`https://www.google.com/maps?q=${collector.address.latitude},${collector.address.longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver no Google Maps
+              </a>
+              <br />
               Latitude: {collector.address.latitude}<br />
               Longitude: {collector.address.longitude}
             </Popup>
