@@ -70,7 +70,6 @@ const CollectorsMap = () => {
   const firstCollector = allCollectors[0];
   const initialCenter = [-22.9, -43.2];
 
-  console.log(collectors)
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <MapContainer

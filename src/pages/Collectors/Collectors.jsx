@@ -56,52 +56,44 @@ const Collectors = () => {
       <table className="w-full border-collapse">
         <thead className="bg-[#F8F8F8]">
           <tr>
-            <th className="p-8"></th>
+            <th className="p-8 text-center"></th>
             <th className="p-8 text-center">Categoria</th>
             <th className="p-8 text-center">Nome</th>
             <th className="p-8 text-center">Peso</th>
             <th className="p-8 text-center">Lotação</th>
-            <th className="p-8"></th>
+            <th className="p-8 text-center"></th>
           </tr>
         </thead>
         <tbody>
           {collectors.map((collector) => (
-            <tr key={collector.id}>
-              <td colSpan={6} className="px-8 h-3 py-4">
-                <div className="flex items-center justify-between bg-white border border-gray-300 rounded-lg p-5">
-                  <CollectorIcon color={color(collector.percentage)} size={35} />
-                  <span className="text-center font-medium flex-1 relative left-16">
-                    {collector.category}
-                  </span>
-                  <span className="text-center flex-1 relative left-[70px]">
-                    {collector.name}
-                  </span>
-                  <span className="text-center flex-1">
-                    {collector.weight}
-                  </span>
-                  <span className="text-center flex-1 relative right-[50px]">
-                    {collector.percentage}
-                  </span>
-                  <img
-                    className="hover:bg-green-100 transition cursor-pointer"
-                    src="/seta_detalhes.svg"
-                    alt="Detalhes do Coletor"
-                    title="Detalhes do Coletor"
-                    width="50"
-                    height="50"
-                  />
-                </div>
+            <tr key={collector.id} className="border-1 border-gray-200 relative h-24">
+              <td className="p-4 text-center">
+                <CollectorIcon color={color(collector.percentage)} size={35} />
+              </td>
+              <td className="p-4 text-center">{collector.category || '-'}</td>
+              <td className="p-4 text-center">{collector.name || '-'}</td>
+              <td className="p-4 text-center">{collector.weight ?? '-'}</td>
+              <td className="p-4 text-center">{collector.percentage ?? '-'}</td>
+              <td className="p-4 text-center">
+                <img
+                  className="hover:bg-green-100 transition cursor-pointer mx-auto"
+                  src="/seta_detalhes.svg"
+                  alt="Detalhes do Coletor"
+                  title="Detalhes do Coletor"
+                  width="50"
+                  height="50"
+                />
               </td>
             </tr>
           ))}
-        </tbody>
+      </tbody>
         <tfoot className="h-20">
           <tr>
             <td colSpan={6}>
               <div className="flex justify-between items-center w-full pr-10">
                 <div>
                   <p className="relative left-2.5 text-sm text-gray-600">
-                    Página {page + 1}/{totalPages} — Total de {totalElements} coletor
+                    Página {page + 1}/{totalPages} — Total de {totalElements} coletores
                   </p>
                 </div>
                 <div className="flex">
@@ -109,7 +101,7 @@ const Collectors = () => {
                     onClick={prevPage}
                     disabled={page === 0}
                     style={{ outline: 'none', boxShadow: 'none', border: 'none' }}
-                    className="transform transition-transform duration-200 hover:scale-110 relative bottom-5 disabled:opacity-50">
+                    className="transform transition-transform duration-200 hover:scale-110 relative disabled:opacity-50">
                     <img
                       src="/seta_prox_esq_pag.svg"
                       alt="Voltar página"
@@ -122,7 +114,7 @@ const Collectors = () => {
                     onClick={nextPage}
                     disabled={page >= totalPages - 1}
                     style={{ outline: 'none', boxShadow: 'none', border: 'none' }}
-                    className="transform transition-transform duration-200 hover:scale-110 relative bottom-5 disabled:opacity-50">
+                    className="transform transition-transform duration-200 hover:scale-110 relative disabled:opacity-50">
                     <img
                       src="/seta_prox_dir_pag.svg"
                       alt="Avançar página"

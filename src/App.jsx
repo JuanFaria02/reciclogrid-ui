@@ -6,6 +6,7 @@ import { AuthProvider } from "./contexts/auth.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import Collectors from "./pages/Collectors/Collectors.jsx";
 import Map from "./pages/Map/Map.jsx";
+import Employee from "./pages/Employee/Employee.jsx";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
                 <Route path="/coletores" element={
                   <PrivateRoute>
                     <Collectors/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/operadores" element={
+                  <PrivateRoute>
+                    <Employee/>
                   </PrivateRoute>
                 }/>
                 <Route path="/mapa" element={

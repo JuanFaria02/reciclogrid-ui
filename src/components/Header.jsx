@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const { signout } = useAuth()
+  const { signout, user } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -35,9 +35,13 @@ const Header = () => {
             <li className="mr-14">
               <Link className="hover:text-green-300" to="/coletores">Coletores</Link>
             </li>
+            {['ADMIN', 'SUPERADMIN'].includes(user.type) && (
             <li className="mr-14">
-              <Link className="hover:text-green-300" to="/operadores">Operadores</Link>
+              <Link className="hover:text-green-300" to="/operadores">
+                Operadores
+              </Link>
             </li>
+            )}
             <li className="mr-14">
               <Link className="hover:text-green-300" to="/mapa">Mapa</Link>
             </li>
