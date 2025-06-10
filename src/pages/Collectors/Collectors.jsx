@@ -75,14 +75,16 @@ const Collectors = () => {
               <td className="p-4 text-center">{collector.weight ?? '-'}</td>
               <td className="p-4 text-center">{collector.percentage ?? '-'}</td>
               <td className="p-4 text-center">
-                <img
-                  className="hover:bg-green-100 transition cursor-pointer mx-auto"
-                  src="/seta_detalhes.svg"
-                  alt="Detalhes do Coletor"
-                  title="Detalhes do Coletor"
-                  width="50"
-                  height="50"
-                />
+                <a href={`/coletores/${collector.id}`} passHref>
+                  <img
+                    className="hover:bg-green-100 transition cursor-pointer mx-auto"
+                    src="/seta_detalhes.svg"
+                    alt="Detalhes do Coletor"
+                    title="Detalhes do Coletor"
+                    width="50"
+                    height="50"
+                  />
+                </a>
               </td>
             </tr>
           ))}
