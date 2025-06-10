@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import Collectors from "./pages/Collectors/Collectors.jsx";
 import Map from "./pages/Map/Map.jsx";
 import Employee from "./pages/Employee/Employee.jsx";
+import ViewCollector from "./pages/Collectors/ViewCollector.jsx";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
                 <Route path="/coletores" element={
                   <PrivateRoute>
                     <Collectors/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/coletores/:collectorId" element={
+                  <PrivateRoute>
+                    <ViewCollector/>
                   </PrivateRoute>
                 }/>
                 <Route path="/operadores" element={
