@@ -2,6 +2,7 @@ import { useState } from "react";
 import CollectorIcon from "../../components/icons/CollectorIcon";
 import { useCollectors } from "../../hooks/useCollectors";
 import { ClipLoader } from "react-spinners";
+import { color } from "../../utils/utils";
 
 const Collectors = () => {
   const [page, setPage] = useState(0);
@@ -48,8 +49,6 @@ const Collectors = () => {
       </div>
     );
   }
-
-  const color = (p) => (p <= 25 ? "green" : p <= 85 ? "yellow" : "red");
 
   return (
     <div className="mt-10 ml-56 mr-56 bg-white grid shadow-[0px_4px_200px_rgba(0,0,0,0.50)] h-auto max-h-[750px]">
