@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useEmployee } from "../../hooks/useEmployee";
 import { ClipLoader } from "react-spinners";
+import { useEmployees } from "../../hooks/useEmployees";
 
-const Employee = () => {
+const TableEmployee = () => {
     const [page, setPage] = useState(0);
     const size = 5;
   
@@ -12,7 +12,7 @@ const Employee = () => {
       error,
       totalPages,
       totalElements
-    } = useEmployee({ page, size, sort: 'id', direction: 'asc' });
+    } = useEmployees({ page, size, sort: 'id', direction: 'asc' });
   
     const prevPage = () => {
       if (page > 0) {
@@ -68,14 +68,16 @@ const Employee = () => {
                 <td className="p-4 text-center">{employee.collectorsCount ?? '-'}</td>
                 <td className="p-4 text-center">{employee.phone || '-'}</td>
                 <td className="p-4 text-center">
+                  <a href={`/operador/${employee.id}`} passHref>
                     <img
-                    className="hover:bg-green-100 transition cursor-pointer mx-auto"
-                    src="/seta_detalhes.svg"
-                    alt="Detalhes do Coletor"
-                    title="Detalhes do Coletor"
-                    width="50"
-                    height="50"
+                      className="hover:bg-green-100 transition cursor-pointer mx-auto"
+                      src="/seta_detalhes.svg"
+                      alt="Detalhes do Coletor"
+                      title="Detalhes do Coletor"
+                      width="50"
+                      height="50"
                     />
+                  </a>
                 </td>
                 </tr>
             ))}
@@ -127,4 +129,4 @@ const Employee = () => {
     )
 }
 
-export default Employee
+export default TableEmployee

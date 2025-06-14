@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useState } from "react";
 import useAuth from "./useAuth";
 
-export const useEmployee = (id) => {
-  const [employee, setEmployee] = useState(null);
+export const useEmployees = ({ page = 0, size = 10, sort = 'id', direction = 'asc' } = {}) => {
+  const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [totalPages, setTotalPages] = useState(0);
+  const [totalElements, setTotalElements] = useState(0);
 
   const { refreshAccessToken, signout } = useAuth();
+  
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
-  const fetchEmployee = useCallback(async () => {
-    if (!id) return;
-
+  
+  const fetchEmployees = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -19,7 +20,7 @@ export const useEmployee = (id) => {
       let token = localStorage.getItem("access_token");
       const refreshToken = localStorage.getItem("refresh_token");
 
-      const url = `${backendUrl}/api/employee/${id}`;
+      const url = `${backendUrl}/api/employees?page=${page}&size=${size}&sort=${sort}&direction=${direction}`;
 
       const callFetch = (authToken) => {
         return fetch(url, {
@@ -48,7 +49,8 @@ export const useEmployee = (id) => {
       if (!response.ok) {
         const errorText = await response.text();
         alert(
-          `Falha ao buscar funcionário:\n` +
+          `Falha ao buscar coletores:\n` +
+            `Status ${response.status} ${response.statusText}\n` +
             `${errorText}`
         );
         setError(`HTTP ${response.status}`);
@@ -56,17 +58,19 @@ export const useEmployee = (id) => {
       }
 
       const data = await response.json();
-      setEmployee(data);
+      setEmployees(data.content);
+      setTotalPages(data.totalPages);
+      setTotalElements(data.totalElements);
     } catch (err) {
       setError(err);
     } finally {
       setLoading(false);
     }
-  }, [id, refreshAccessToken, signout]);
+  }, [page, size, sort, direction, refreshAccessToken, signout]);
 
   useEffect(() => {
-    fetchEmployee().then();
-  }, [fetchEmployee]);
+    fetchEmployees().then();
+  }, [fetchEmployees]);
 
-  return { employee, loading, error, refetch: fetchEmployee };
+  return { employees, loading, error, totalPages, totalElements, refetch: fetchEmployees };
 };

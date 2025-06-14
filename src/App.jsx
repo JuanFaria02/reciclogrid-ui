@@ -6,8 +6,9 @@ import { AuthProvider } from "./contexts/auth.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import Collectors from "./pages/Collectors/Collectors.jsx";
 import Map from "./pages/Map/Map.jsx";
-import Employee from "./pages/Employee/Employee.jsx";
 import ViewCollector from "./pages/Collectors/ViewCollector.jsx";
+import TableEmployee from "./pages/Employee/TableEmployee.jsx";
+import ViewEmployee from "./pages/Employee/ViewEmployee.jsx";
 
 function App() {
   return (
@@ -21,14 +22,19 @@ function App() {
                     <Collectors/>
                   </PrivateRoute>
                 }/>
-                <Route path="/coletores/:collectorId" element={
+                <Route path="/coletor/:collectorId" element={
                   <PrivateRoute>
                     <ViewCollector/>
                   </PrivateRoute>
                 }/>
                 <Route path="/operadores" element={
                   <PrivateRoute>
-                    <Employee/>
+                    <TableEmployee/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/operador/:employeeId" element={
+                  <PrivateRoute>
+                    <ViewEmployee/>
                   </PrivateRoute>
                 }/>
                 <Route path="/mapa" element={
