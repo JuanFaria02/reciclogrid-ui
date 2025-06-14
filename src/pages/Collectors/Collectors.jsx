@@ -74,7 +74,7 @@ const Collectors = () => {
               <td className="p-4 text-center">{collector.weight ?? '-'}</td>
               <td className="p-4 text-center">{collector.percentage ?? '-'}</td>
               <td className="p-4 text-center">
-                <a href={`/coletores/${collector.id}`} passHref>
+                <a href={`/coletor/${collector.id}`} passHref>
                   <img
                     className="hover:bg-green-100 transition cursor-pointer mx-auto"
                     src="/seta_detalhes.svg"
