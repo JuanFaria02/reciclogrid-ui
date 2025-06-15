@@ -10,6 +10,7 @@ import ViewCollector from "./pages/Collectors/ViewCollector.jsx";
 import TableEmployee from "./pages/Employee/TableEmployee.jsx";
 import ViewEmployee from "./pages/Employee/ViewEmployee.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
+import Welcome from "./pages/About/Welcome.jsx";
 
 function App() {
   return (
@@ -49,7 +50,9 @@ function App() {
                   </PrivateRoute>
                 }/>
                 <Route path="*" element={
-                  <PrivateRoute/>
+                  <PrivateRoute>
+                    <Welcome/>
+                  </PrivateRoute>
                 }/>
             </Routes>
           </BrowserRouter>

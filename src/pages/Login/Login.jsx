@@ -10,7 +10,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate("/coletores")
+            navigate("/")
         }
     }, [navigate, isAuthenticated])
 

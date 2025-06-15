@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-2xl">
       <div className="flex justify-between items-center px-4 md:px-10 h-32">
-        <Link to="/coletores" className="pt-8 pb-8">
+        <Link to="/" className="pt-8 pb-8">
           <img
             src="/reciclogrid_logo.svg"
             alt="Logo Reciclogrid"

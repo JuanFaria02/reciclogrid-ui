@@ -54,7 +54,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="mt-10 flex justify-end">
+      <div className="mt-10 flex">
         <a href="/" title="Voltar para o início">
           <img
             src="/seta_prox_esq_pag.svg"
