@@ -59,6 +59,10 @@ const ViewEmployee = () => {
                 <span className="w-36 font-semibold">Empresa:</span>
                 <span className="bg-gray-100 px-4 py-2 rounded">{employee.company?.name || '-'}</span>
             </div>
+            <div className="flex items-center gap-4">
+                <span className="w-36 font-semibold">Cargo:</span>
+                <span className="bg-gray-100 px-4 py-2 rounded">{employee.position || '-'}</span>
+            </div>
         </div>
 
         <div className="mt-10 flex">

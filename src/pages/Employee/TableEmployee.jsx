@@ -57,6 +57,7 @@ const TableEmployee = () => {
               <th className="p-8 text-center">Email</th>
               <th className="p-8 text-center">Quantidade de Coletores</th>
               <th className="p-8 text-center">Telefone</th>
+              <th className="p-8 text-center">Cargo</th>
               <th className="p-8"></th>
             </tr>
           </thead>
@@ -67,6 +68,7 @@ const TableEmployee = () => {
                 <td className="p-4 text-center">{employee.email || '-'}</td>
                 <td className="p-4 text-center">{employee.collectorsCount ?? '-'}</td>
                 <td className="p-4 text-center">{employee.phone || '-'}</td>
+                <td className="p-4 text-center">{employee.position || '-'}</td>
                 <td className="p-4 text-center">
                   <a href={`/operador/${employee.id}`} passHref>
                     <img
