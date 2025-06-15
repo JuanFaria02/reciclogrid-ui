@@ -9,6 +9,7 @@ import Map from "./pages/Map/Map.jsx";
 import ViewCollector from "./pages/Collectors/ViewCollector.jsx";
 import TableEmployee from "./pages/Employee/TableEmployee.jsx";
 import ViewEmployee from "./pages/Employee/ViewEmployee.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
 
 function App() {
   return (
@@ -40,6 +41,11 @@ function App() {
                 <Route path="/mapa" element={
                   <PrivateRoute>
                     <Map/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/perfil" element={
+                  <PrivateRoute>
+                    <Profile/>
                   </PrivateRoute>
                 }/>
                 <Route path="*" element={
