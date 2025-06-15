@@ -1,8 +1,9 @@
 # Sistema de Gestão de Coletores e Operadores - Reciclogrid
 
-Este projeto é uma aplicação frontend desenvolvida em **React** utilizando o **Vite** como bundler e servidor de desenvolvimento. Faz parte de um sistema para visualização, cadastro e gestão de **Coletores de resíduos** e **Operadores (Funcionários)**.
+Este projeto é uma aplicação frontend desenvolvida em **React** utilizando o **Vite** como bundler e servidor de desenvolvimento. Faz parte de um sistema para visualização, cadastro e gestão de **Coletores de resíduos eletrônicos** e **Operadores (Funcionários)**.
 
----
+O Reciclogrid tem o objetivo de auxiliar a coleta de resíduos eletrônicos, coletando informações enviadas pelos sensores inseridos nos recipientes.
+
 
 ## Sobre o Projeto
 
