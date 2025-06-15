@@ -1,12 +1,47 @@
-# React + Vite
+# Sistema de Gestão de Coletores e Operadores - Reciclogrid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação frontend desenvolvida em **React** utilizando o **Vite** como bundler e servidor de desenvolvimento. Faz parte de um sistema para visualização, cadastro e gestão de **Coletores de resíduos** e **Operadores (Funcionários)**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o Projeto
 
-## Expanding the ESLint configuration
+A aplicação permite:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Listagem de coletores com status de ocupação
+- ✅ Listagem de operadores com informações de contato e quantidade de coletores atribuídos
+- ✅ Detalhamento individual de cada coletor ou operador
+- ✅ Paginação com navegação entre páginas
+- ✅ Interface responsiva, adaptada para desktop e mobile
+
+---
+
+## Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## ⚙️ Como executar o projeto localmente
+
+### Pré-requisitos
+
+- Node.js (v16 ou superior recomendado)
+- [pnpm](https://pnpm.io/installation)
+
+### Passo a passo
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+
+# 2. Acesse a pasta do projeto
+cd nome-do-projeto
+
+# 3. Instale as dependências
+pnpm install
+
+# 4. Rode o projeto em modo desenvolvimento
+pnpm dev
+```
