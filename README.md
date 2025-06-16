@@ -35,10 +35,7 @@ A aplicação permite:
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
-
 # 2. Acesse a pasta do projeto
-cd nome-do-projeto
 
 # 3. Instale as dependências
 pnpm install
