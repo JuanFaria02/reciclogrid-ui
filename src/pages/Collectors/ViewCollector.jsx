@@ -26,7 +26,7 @@ const ViewCollector = () => {
 
   const statusColor = color(collector.percentage);
   const statusLabel =
-    collector.percentage < 50
+    collector.percentage < 25
       ? "Lotação Baixa"
       : collector.percentage < 85
       ? "Lotação Média"
