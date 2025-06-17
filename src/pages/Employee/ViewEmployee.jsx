@@ -56,6 +56,11 @@ const ViewEmployee = () => {
             </div>
 
             <div className="flex items-center gap-4">
+                <span className="w-36 font-semibold">Coletores:</span>
+                <span className="bg-gray-100 px-4 py-2 rounded">{employee.qtdCollectors || '-'}</span>
+            </div>
+
+            <div className="flex items-center gap-4">
                 <span className="w-36 font-semibold">Empresa:</span>
                 <span className="bg-gray-100 px-4 py-2 rounded">{employee.company?.name || '-'}</span>
             </div>

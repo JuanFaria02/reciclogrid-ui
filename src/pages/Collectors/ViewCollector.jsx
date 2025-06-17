@@ -65,7 +65,7 @@ const ViewCollector = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="w-28 font-semibold">Peso:</span>
-                    <span className="bg-gray-100 px-4 py-2 rounded">{collector.weight ?? '-'}kg</span>
+                    <span className="bg-gray-100 px-4 py-2 rounded">{collector.weight ?? '-'}</span>
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="w-28 font-semibold">Lotação:</span>
@@ -86,7 +86,7 @@ const ViewCollector = () => {
 
                 {collector.address.latitude && collector.address.longitude && (
                     <a
-                    href={`https://www.google.com/maps?q=${collector.latitude},${collector.longitude}`}
+                    href={`https://www.google.com/maps?q=${collector.address.latitude},${collector.address.longitude}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-2 text-blue-600 underline hover:text-blue-800"

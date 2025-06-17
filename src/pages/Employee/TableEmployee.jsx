@@ -46,7 +46,7 @@ const TableEmployee = () => {
           <tr>
             <th className="p-4 text-center">Nome</th>
             <th className="p-4 text-center">Email</th>
-            <th className="p-4 text-center">Qtd Coletores</th>
+            <th className="p-4 text-center">Quantidade de Coletores</th>
             <th className="p-4 text-center">Telefone</th>
             <th className="p-4 text-center">Cargo</th>
             <th className="p-4 text-center"></th>
@@ -57,7 +57,7 @@ const TableEmployee = () => {
             <tr key={employee.id} className="border-b border-gray-200 h-20">
               <td className="text-center">{employee.name || '-'}</td>
               <td className="text-center">{employee.email || '-'}</td>
-              <td className="text-center">{employee.collectorsCount ?? '-'}</td>
+              <td className="text-center">{employee.qtdCollectors ?? '-'}</td>
               <td className="text-center">{employee.phone || '-'}</td>
               <td className="text-center">{employee.position || '-'}</td>
               <td className="text-center">
@@ -81,7 +81,7 @@ const TableEmployee = () => {
           <div key={employee.id} className="border-b border-gray-300 p-4">
             <strong className="block mb-2">{employee.name || 'Sem Nome'}</strong>
             <p><strong>Email:</strong> {employee.email || '-'}</p>
-            <p><strong>Qtd Coletores:</strong> {employee.collectorsCount ?? '-'}</p>
+            <p><strong>Quantidade de Coletores:</strong> {employee.qtdCollectors ?? '-'}</p>
             <p><strong>Telefone:</strong> {employee.phone || '-'}</p>
             <p><strong>Cargo:</strong> {employee.position || '-'}</p>
             <div className="mt-2">

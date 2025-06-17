@@ -73,7 +73,7 @@ const Collectors = () => {
               <td className="text-center">{collector.category || '-'}</td>
               <td className="text-center">{collector.name || '-'}</td>
               <td className="text-center">{collector.weight ?? '-'}</td>
-              <td className="text-center">{collector.percentage ?? '-'}</td>
+              <td className="text-center">{collector.percentage === undefined || collector.percentage === null ? '-' : `${collector.percentage}%`}</td>
               <td className="text-center">
                 <a href={`/coletor/${collector.id}`}>
                   <img src="/seta_detalhes.svg" alt="Detalhes" width="40" height="40" className="mx-auto cursor-pointer hover:scale-110 transition" />
